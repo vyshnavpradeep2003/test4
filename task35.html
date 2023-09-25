@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+        <style>
+            .error-message {
+                color: red;
+                font-size: 14px;
+            }
+            input {
+  border: 2px solid;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin: 0.25rem;
+  min-width: 125px;
+  padding: 0.5rem;
+  transition: border-color 0.5s ease-out;
+}
+input:invalid 
+{
+  border-color: red;
+}
+
+        </style>
+    </head>
+    <body>
+        <center>
+        <form class="form" id="p1" action="/action_page.php">
+            <table>
+                <tr>
+                    <td><label class="form-label my-3">Name: </label></td>
+                    <td><input class="form-control my-3" id="p2" type="text" required>
+                        <div class="error-message" id="name-error1">This field is required</div></td>
+                </tr>
+                <tr>
+                    <td><label class="form-label my-3">Email: </label></td>
+                    <td><input class="form-control my-3" id="p3" type="text" required>
+                        <div class="error-message" id="name-error2">A valid email address is required</div></td>
+                </tr>
+                <tr>
+                    <td><label class="form-label my-3">Website: </label></td>
+                    <td><input class="form-control my-3" id="p4" type="text" required>
+                        <div class="error-message" id="name-error3">A valid url is required</div></td>
+                </tr>
+                <tr>
+                    <td><label class="form-label my-3">Message: </label></td>
+                    <td><input style="height:100px; " name="subject" id="p5" required>
+                        <div class="error-message" id="name-error4">This field is required</div></td>
+                </tr>
+
+            </table>
+            <button onclick="validateForm()">Submit</button>
+        </form>
+        </center>
+        <script>
+            function validateForm()
+            {
+           
+            const nameInput = document.getElementById("p2");
+        const nameError = document.getElementById("name-error1");
+
+        // Add an event listener to the input element
+        nameInput.addEventListener("blur", () => {
+            // Check if the input is empty or contains invalid data (you can customize this validation)
+            if (nameInput.value.trim() === "") {
+                // Display the error message
+                nameError.style.display = "block";
+                nameInput.classList.add("invalid-input");
+            } else {
+                // Hide the error message if the input is valid
+                nameError.style.display = "none";
+                nameInput.classList.remove("invalid-input");
+            }
+        });
+        const emailInput = document.getElementById("p3");
+        const emailError = document.getElementById("name-error2");
+
+        // Add an event listener to the input element
+        emailInput.addEventListener("blur", () => {
+            // Check if the input is empty or contains invalid data (you can customize this validation)
+            if (emailInput.value.trim() === "") {
+                // Display the error message
+                emailError.style.display = "block";
+                emailInput.classList.add("invalid-input");
+            } else {
+                // Hide the error message if the input is valid
+                emailError.style.display = "none";
+                emailInput.classList.remove("invalid-input");
+            }
+        });
+        const websiteInput = document.getElementById("p4");
+        const websiteError = document.getElementById("name-error3");
+
+        // Add an event listener to the input element
+        websiteInput.addEventListener("blur", () => {
+            // Check if the input is empty or contains invalid data (you can customize this validation)
+            if (websiteInput.value.trim() === "") {
+                // Display the error message
+                websiteError.style.display = "block";
+                websiteInput.classList.add("invalid-input");
+            } else {
+                // Hide the error message if the input is valid
+            websiteError.style.display = "none";
+            websiteInput.classList.remove("invalid-input");
+            }
+        });
+        const messageInput = document.getElementById("p5");
+        const messageError = document.getElementById("name-error4");
+
+        // Add an event listener to the input element
+        messageInput.addEventListener("blur", () => {
+            // Check if the input is empty or contains invalid data (you can customize this validation)
+            if (messageInput.value.trim() === "") {
+                // Display the error message
+                messageError.style.display = "block";
+                messageInput.classList.add("invalid-input");
+            } else {
+                // Hide the error message if the input is valid
+                messageError.style.display = "none";
+                messageInput.classList.remove("invalid-input");
+            }
+        });
+        }
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+       
+        <input type="button" onClick="showDate()" Value="show date" />
+        <br>
+        <span id="Result1"></span>
+        <br>
+        <input type="button" onClick="showTime()" Value="show time" />
+        <br>
+        <span id="Result2"></span>
+        <script>
+            function showDate()
+            {
+                var Months = ['January', 'February', 'March', 'April',
+                'May', 'June', 'July', 'August', 'September',
+                'October', 'November', 'December'];
+                let dateObj = new Date();
+                let month = dateObj.getUTCMonth(); //months from 1-12
+                let day = dateObj.getUTCDate();
+                let year = dateObj.getUTCFullYear();
+                newdate = day + "/" + Months[month] + "/" + year;
+                document.getElementById("Result1").innerHTML = newdate;
+            }
+            function showTime()
+            {
+                document.getElementById("Result2").innerHTML = Date();
+            }
+        </script>
+    </body>
+</html>
